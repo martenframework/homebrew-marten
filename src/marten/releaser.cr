@@ -27,7 +27,7 @@ module Marten
     end
 
     private def formula_url
-      "https://github.com/martenframework/homebrew-marten/raw/master/#{tarball_path}"
+      "https://raw.githubusercontent.com/martenframework/homebrew-marten/master/#{tarball_path}"
     end
 
     private def formula_version
