@@ -1,9 +1,9 @@
 class Marten < Formula
   desc "CLI client for initializing new Marten projects and applications"
   homepage "http://github.com/martenframework/marten"
-  url "https://github.com/martenframework/homebrew-marten/raw/master/tarballs/marten-0.1.0.dev0.20211109210808.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-  sha256 "8c223ec41dae53eb6f03d24b0e592a886891cfb09ee4554fcaebc00094175420"
-  version "0.1.0.dev0.20211109210808"
+  url "https://github.com/martenframework/homebrew-marten/raw/master/tarballs/marten-0.1.0.dev0.20211109211506.tar.gz", :using => GitHubPrivateRepositoryDownloadStrategy
+  sha256 "ad467b8ef6ac36a753fd15369290480e3cfd972952d55fedd203c2fcfeca9213"
+  version "0.1.0.dev0.20211109211506"
   depends_on "crystal"
 
   def install
