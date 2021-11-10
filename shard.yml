@@ -1,0 +1,14 @@
+name: homebrew-marten
+version: 0.1.0.dev0
+
+authors:
+  - Morgan Aubert <me@morganaubert.name>
+
+crystal: ">= 1.0.0"
+
+dependencies:
+  marten:
+    github: martenframework/marten
+    branch: main
+
+license: MIT
