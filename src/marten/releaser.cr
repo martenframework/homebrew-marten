@@ -11,7 +11,12 @@ module Marten
     def release
       # First generates the Marten tarball.
       puts "Generating tarball..."
-      Process.run("tar -czf #{tarball_path} lib/marten -C lib/marten .", shell: true, output: STDOUT, error: STDERR)
+      Process.run(
+        "tar --exclude=lib -czf #{tarball_path} lib/marten -C lib/marten .",
+        shell: true,
+        output: STDOUT,
+        error: STDERR
+      )
 
       # Then generates the formula.
       puts "Generating formula..."
