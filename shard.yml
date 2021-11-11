@@ -9,6 +9,6 @@ crystal: ">= 1.0.0"
 dependencies:
   marten:
     github: martenframework/marten
-    commit: aa6f84b819933627b69082098bc3b3ee137fab43
+    commit: baac5ed
 
 license: MIT
