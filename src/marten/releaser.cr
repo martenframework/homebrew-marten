@@ -12,7 +12,7 @@ module Marten
       # First generates the Marten tarball.
       puts "Generating tarball..."
       Process.run(
-        "tar --exclude=lib -czf #{tarball_path} lib/marten -C lib/marten .",
+        "tar --exclude=bin --exclude=lib -czf #{tarball_path} lib/marten -C lib/marten .",
         shell: true,
         output: STDOUT,
         error: STDERR

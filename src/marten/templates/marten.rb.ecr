@@ -10,6 +10,7 @@ class Marten < Formula
 
   def install
     system "make"
+    system "mkdir -p bin && crystal build src/marten_cli.cr -o bin/marten"
     bin.install "bin/marten"
   end
 
