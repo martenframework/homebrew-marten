@@ -3,9 +3,9 @@ require_relative "lib/private_strategy"
 class Marten < Formula
   desc "CLI client for initializing new Marten projects and applications"
   homepage "http://github.com/martenframework/marten"
-  url "https://raw.githubusercontent.com/martenframework/homebrew-marten/master/tarballs/marten-0.1.0.dev0.20211113103603.tar.gz", :using => GitHubPrivateRepositoryDownloadStrategy
-  sha256 "ba538b1ef1658edbf7dcc17aac7d6252e125b3eee733a1d2c1c318410066ec2d"
-  version "0.1.0.dev0.20211113103603"
+  url "https://raw.githubusercontent.com/martenframework/homebrew-marten/master/tarballs/marten-0.1.0.dev0.20211223104920.tar.gz", :using => GitHubPrivateRepositoryDownloadStrategy
+  sha256 "c2619180ec3875e20129e023895c08268a91e38e9ab7488432462c72a245e55f"
+  version "0.1.0.dev0.20211223104920"
   depends_on "crystal"
 
   def install
