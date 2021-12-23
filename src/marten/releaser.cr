@@ -4,13 +4,16 @@ module Marten
   class Releaser
     @formula_version : String? = nil
 
-    def self.run
-      new.release
+    def self.run(**kwargs)
+      new(**kwargs).release
+    end
+
+    def initialize(@stdout : IO = STDOUT)
     end
 
     def release
       # First generates the Marten tarball.
-      puts "Generating tarball..."
+      stdout.puts "Generating tarball..."
       Process.run(
         "tar --exclude=bin --exclude=lib -czf #{tarball_path} lib/marten -C lib/marten .",
         shell: true,
@@ -19,10 +22,16 @@ module Marten
       )
 
       # Then generates the formula.
-      puts "Generating formula..."
-      File.write("./Formula/marten.rb", ECR.render("#{__DIR__}/templates/marten.rb.ecr"))
+      stdout.puts "Generating formula..."
+      File.write(formula_path, ECR.render("#{__DIR__}/templates/marten.rb.ecr"))
 
-      puts "Done. 🎉"
+      stdout.puts "Done. 🎉"
+    end
+
+    private getter stdout
+
+    private def formula_path
+      "#{Marten.env.test? ? "./spec/" : "./"}Formula/marten.rb"
     end
 
     private def formula_sha256
@@ -37,14 +46,14 @@ module Marten
 
     private def formula_version
       @formula_version ||= if Marten::VERSION.ends_with?(".dev") || Marten::VERSION.ends_with?(".dev0")
-        "#{Marten::VERSION}.#{Time.local.to_s("%Y%m%d%H%M%S")}"
-      else
-        Marten::VERSION
-      end
+                             "#{Marten::VERSION}.#{Time.local.to_s("%Y%m%d%H%M%S")}"
+                           else
+                             Marten::VERSION
+                           end
     end
 
     private def tarball_path
-      "tarballs/marten-#{formula_version}.tar.gz"
+      "#{Marten.env.test? ? "spec/" : ""}tarballs/marten-#{formula_version}.tar.gz"
     end
   end
 end

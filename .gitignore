@@ -10,3 +10,7 @@
 .icr_*
 *.db
 /shard.lock
+/spec/Formula/*
+!/spec/Formula/.gitkeep
+/spec/tarballs/*
+!/spec/tarballs/.gitkeep

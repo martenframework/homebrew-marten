@@ -16,6 +16,44 @@ release:
 	crystal run src/release.cr
 
 
+# QUALITY ASSURANCE
+# ~~~~~~~~~~~~~~~~~
+# The following rules can be used to check code quality and perform sanity checks.
+# --------------------------------------------------------------------------------------------------
+
+.PHONY: qa
+## Trigger all quality assurance checks.
+qa: format_checks lint
+
+.PHONY: format
+## Perform and apply crystal formatting.
+format:
+	crystal tool format
+
+.PHONY: format_checks
+## Trigger crystal formatting checks.
+format_checks:
+	crystal tool format --check
+
+.PHONY: lint
+## Trigger code quality checks.
+lint:
+	bin/ameba
+
+
+# TESTING
+# ~~~~~~~
+# The following rules can be used to trigger tests execution and produce coverage reports.
+# --------------------------------------------------------------------------------------------------
+
+.PHONY: t tests
+## Alias of "tests".
+t: tests
+## Run all the test suites.
+tests:
+	crystal spec
+
+
 # MAKEFILE HELPERS
 # ~~~~~~~~~~~~~~~~
 # The following rules can be used to list available commands and to display help messages.

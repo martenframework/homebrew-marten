@@ -11,4 +11,8 @@ dependencies:
     github: martenframework/marten
     commit: e23c8ac
 
+development_dependencies:
+  ameba:
+    github: crystal-ameba/ameba
+
 license: MIT
