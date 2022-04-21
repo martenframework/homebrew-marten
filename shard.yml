@@ -9,7 +9,7 @@ crystal: ">= 1.0.0"
 dependencies:
   marten:
     github: martenframework/marten
-    commit: e6f8964
+    commit: 8d68d69
 
 development_dependencies:
   ameba:
