@@ -1,9 +1,7 @@
-require_relative "lib/private_strategy"
-
 class Marten < Formula
   desc "CLI client for initializing new Marten projects and applications"
   homepage "http://github.com/martenframework/marten"
-  url "<%= formula_url %>", :using => GitHubPrivateRepositoryDownloadStrategy
+  url "<%= formula_url %>"
   sha256 "<%= formula_sha256 %>"
   version "<%= formula_version %>"
   depends_on "crystal"
