@@ -7,7 +7,7 @@ class Marten < Formula
   depends_on "crystal"
 
   def install
-    system "make"
+    system "shards install"
     system "mkdir -p bin && crystal build src/marten_cli.cr -o bin/marten"
     bin.install "bin/marten"
   end
