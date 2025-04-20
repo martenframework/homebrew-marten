@@ -55,9 +55,9 @@ describe Marten::Releaser do
 
       formula_content = File.read("spec/Formula/marten.rb")
       formula_content.matches?(Regex.new("class Marten < Formula")).should be_true
-      formula_content.matches?(Regex.new(%{homepage "http://github.com/martenframework/marten"})).should be_true
-      formula_content.matches?(Regex.new(%{sha256 "#{tarball_sha256}"})).should be_true
-      formula_content.matches?(Regex.new(%{depends_on "crystal"})).should be_true
+      formula_content.matches?(Regex.new(%(homepage "http://github.com/martenframework/marten"))).should be_true
+      formula_content.matches?(Regex.new(%(sha256 "#{tarball_sha256}"))).should be_true
+      formula_content.matches?(Regex.new(%(depends_on "crystal"))).should be_true
     end
   end
 end
