@@ -38,7 +38,7 @@ format_checks:
 .PHONY: lint
 ## Trigger code quality checks.
 lint:
-	bin/ameba.cr
+	lib/ameba/bin/ameba.cr
 
 
 # TESTING
